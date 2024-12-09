@@ -46,6 +46,7 @@
     <Compile Include="Classes\Cows.cs" />
     <Compile Include="Classes\CowshedItem.cs" />
     <Compile Include="Classes\Equipment.cs" />
+    <Compile Include="Classes\Employees.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

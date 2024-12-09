@@ -26,7 +26,15 @@ namespace MyTheme
                 new Equipment("Кормушка", 5000, "каждые 12 месяцев", "FarmEquip")
             };
 
-            Console.WriteLine("Какую информацию вы хотите узнать? 1 - коровы, 2 - оборудование");
+            //список профессий в коровнике
+            List<Employees> employees = new List<Employees>
+            {
+                new Employees("Дояр", 50000, 6),
+                new Employees("Кормилец", 38000, 6),
+                new Employees("Ветеринар", 80000, 5)
+            };
+
+            Console.WriteLine("Какую информацию вы хотите узнать? 1 - коровы, 2 - оборудование, 3 - профессии");
             int number = int.Parse(Console.ReadLine());
 
             switch (number)
@@ -49,11 +57,21 @@ namespace MyTheme
                     int choiseEquip = int.Parse(Console.ReadLine())-1;
                     equipment[choiseEquip].PrintInfo();
                     break;
+                case 3:
+                    Console.WriteLine("Выберите специальность:");
+                    for (int i = 0; i < employees.Count; i++)
+                    {
+                        Console.WriteLine($"{i + 1}: {employees[i].name}");
+                    }
+                    int choiseEmployees = int.Parse(Console.ReadLine()) - 1;
+                    employees[choiseEmployees].PrintInfo();
+                    break;
                 default:
                     Console.WriteLine("Некорректные данные");
                     break;
             }
-
+            
+            
             Console.ReadKey();
 
         }

@@ -27,6 +27,26 @@ namespace MyTheme
             this.name = name;
         }
 
+        public void UpdatePrice(double newPrice)
+        {
+            price = newPrice; // обновление стоимость оборудования
+        }
+
+        public void UpdateMaintenance(string newMaintenance)
+        {
+            maintenance = newMaintenance; // изменение график обслуживания
+        }
+
+        public void SetManufacturer(string newManufacturer)
+        {
+            manufacture = newManufacturer; // изменение производителя
+        }
+
+        public string GetInfo()
+        {
+            return $"Название: {name}, Стоимость: {price} руб, Обслуживание: {maintenance}, Производитель: {manufacture}";
+        }
+
         public override void PrintInfo()
         {
             Console.WriteLine($"Название оборудования: {name}, Стоимость: {price} руб, Обслуживается {maintenance}, Производитель: {manufacture}");

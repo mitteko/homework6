@@ -10,6 +10,7 @@ namespace MyTheme
 
     internal class Cows : CowshedItem
     {
+        public int countOfCows { get; private set; }
         public override string name { get; } // вид коровы
         public override double price { get; set; } // цена (руб/кг)
         public double yields { get; private set; } // удои (кг/год)
@@ -28,6 +29,26 @@ namespace MyTheme
         public Cows(string name) //консруктор для одного параметра
         {
             this.name = name;
+        }
+
+        public void CountOfCows(List<Cows> cows)
+        {
+            countOfCows=cows.Count; // сколько разновидностей коров в коровнике
+        }
+
+        public void UpdatePrice(double newPrice)
+        {
+            price = newPrice; // изменение стоимости коровы
+        }
+
+        public void UpdateYields(double newYields)
+        {
+            yields = newYields; // изменение удоев в год
+        }
+
+        public string GetInfo()
+        {
+            return $"Вид коровы: {name}, Цена: {price} руб/кг, Удои: {yields} кг/год, Жирность: {fatness}%, Белок: {protein}%";
         }
 
         public override void PrintInfo()
